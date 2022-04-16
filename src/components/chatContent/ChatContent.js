@@ -73,8 +73,8 @@ export default class ChatContent extends Component {
 
   componentDidMount() {
     window.addEventListener("keydown", (e) => {
-      if (e.keyCode == 13) {
-        if (this.state.msg != "") {
+      if (e.keyCode === 13) {
+        if (this.state.msg !== "") {
           this.chatItms.push({
             key: 1,
             type: "",
@@ -132,7 +132,13 @@ export default class ChatContent extends Component {
             <div ref={this.messagesEndRef} />
           </div>
         </div>
-        <div className="content__footer" ref={this.contentRef} onClick={()=>{console.log(this.contentRef.current)}}>
+        <div
+          className="content__footer"
+          ref={this.contentRef}
+          onClick={() => {
+            console.log(this.contentRef.current);
+          }}
+        >
           <div className="sendNewMessage">
             <button className="addFiles">
               <i className="fa fa-plus"></i>
