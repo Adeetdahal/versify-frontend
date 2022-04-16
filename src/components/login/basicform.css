@@ -1,0 +1,138 @@
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+  .sub-main{
+    border: 2px solid black;
+    border-radius: 20px;
+    /* width: fit-content; */
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 290px;
+    box-shadow: 11px 12px 13px 12px rgb(37, 33, 33);
+    background-color: rgba(255, 255, 255, 0.404);
+  }
+  .image1{
+    height: 50px;
+    width: 50px;
+  }
+  .logo{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    padding-top: 15px;
+    /* padding: 25px 0 55px 0; */
+  }
+  .line{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 25px 0 30px 0;
+  }
+  hr{
+    margin: 0 10px 0 10px;
+    border: 1px solid black;
+  }
+  .signin{
+    text-align: center;
+    /* font-weight: 600; */
+  }
+  .form{
+    padding: 0 0px 12px 12px;
+  }
+  .uname{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+  }
+  .emailpic{
+    width: auto;
+    height: 13px;
+    position: absolute;
+    padding:12px 0 0 6px ;
+  }
+  .name{
+    padding-left: 26px;
+  }
+  .pwd{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 9px;
+    /* position: absolute; */
+  }
+  .passpic{
+    width: auto;
+    height: 18px;
+    position: absolute;
+    padding:9px 0 0 10px ;
+  }
+  .span{
+    cursor: pointer;
+    transform: translate(-35px,1.5px);
+    display: flex;
+    
+    
+  }
+  /* .eye{
+    font-size: 18px;
+    position: absolute;
+    padding: 9px 0 0 180px; 
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    right: 32px;
+    padding: auto;
+    cursor: pointer;
+    justify-items: end;
+  } */
+  .icon{
+    padding: 9px 0 0 12px;
+      position: absolute;
+  }
+  .pass{
+    padding-left: 26px;
+  }
+  .input{
+    height: 33px;
+    border-radius : 25px;
+    width: 81%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: #8b848a 0px 5px 15px;
+    border: transparent;
+    
+  }
+  .loginbtn{
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    background-color:darkblue ;
+    color: white;
+    /* width: 210px; */
+    height: 30px;
+    font-size: medium;
+    font-weight: 600;
+    padding-top: 3px;
+  }
+  .warn{
+    text-align: right;
+    padding: 0 22px 15px 0;
+    color: blue;
+    cursor: pointer;
+  }
+  .button{
+    display: flex;
+    justify-content: center;
+  }
+  .register{
+    cursor: pointer;
+    padding-top: 10px;
+    text-align: center;
+    
+  }

@@ -1,0 +1,49 @@
+
+.pname, .pemail, .ppass{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 9px;
+    /* position: absolute; */
+}
+.icon{
+    padding: 11px 0 0 12px;
+    position: absolute;
+}
+.name{
+    padding-left: 26px;
+}
+.eicon{
+    padding: 11px 0 0 12px;
+    position: absolute;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input{
+    height: 33px;
+    border-radius : 25px;
+    width: 250px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: #8b848a 0px 5px 15px;
+    border: transparent;    
+}
+.loginbtn{
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    background-color:darkblue ;
+    color: white;
+    /* width: 210px; */
+    height: 30px;
+    font-size: medium;
+    font-weight: 600;
+    padding-top: 3px;
+    
+}
