@@ -123,7 +123,7 @@ export default class ChatContent extends Component {
                 <ChatItem
                   animationDelay={index + 2}
                   key={itm.key}
-                  user={itm.type ? itm.type : "me"}
+                  user={itm.type || "me"}
                   msg={itm.msg}
                   image={itm.image}
                 />

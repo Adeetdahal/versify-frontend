@@ -9,7 +9,6 @@
   flex-grow: 1;
   flex-direction: column;
   padding: 20px 40px;
-  max-width: 100%;
   border-right: 1px solid #ebe7fb;
   position: relative;
 }
@@ -126,7 +125,6 @@
 }
 
 .sendNewMessage {
-  background-color: transparent;
   display: flex;
   justify-content: space-between;
   border-radius: 8px;
