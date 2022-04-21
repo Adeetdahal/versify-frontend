@@ -1,26 +1,57 @@
-import React from "react";
-import "./App.css";
-// import Nav from "./components/nav/Nav";
-import ChatBody from "./components/chatBody/ChatBody";
-import BasicForm from './components/login/Basicform';
+import React, { Component } from 'react';
+import Login from './components/login/login';
+import ChatWindow from './components/chatWindow/chatBody/chatWindow';
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+    createSignalProtocolManager,
+    SignalServerStore,
+} from './signal/SignalGateway';
 
-function App() {
-  return (
-    <div className="__main">
-      <Router>
-        <Routes>
-          <Route path="/login" element={<BasicForm/>}/>
-          {/* <Route path="/register" element={<Register/>}/> */}
-          <Route path="/" element={<ChatBody/>}/>
-        </Routes>
-      </Router>
-    </div>
-  );
+import './App.css';
+export default class ChatApp extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoggedIn: false,
+            loggedInUserObj: {},
+            dummySignalServer: new SignalServerStore(),
+            signalProtocolManagerUser: undefined,
+        };
+        this.setLoggedinUser = this.setLoggedinUser.bind(this);
+    }
+
+    setLoggedinUser(loggedInUserObj) {
+        this.setState(
+            { isLoggedIn: true, loggedInUserObj: { ...loggedInUserObj } },
+            () => {
+                // Initializing signal server here
+                createSignalProtocolManager(
+                    loggedInUserObj._id,
+                    loggedInUserObj.name,
+                    this.state.dummySignalServer
+                ).then((signalProtocolManagerUser) => {
+                    this.setState({
+                        signalProtocolManagerUser: signalProtocolManagerUser,
+                    });
+                });
+            }
+        );
+    }
+
+    render() {
+        return (
+            <div className="__main">
+                {!this.state.isLoggedIn && (
+                    <Login loginProp={this.setLoggedinUser} />
+                )}
+                {this.state.isLoggedIn && (
+                    <ChatWindow
+                        loggedInUserObj={this.state.loggedInUserObj}
+                        signalProtocolManagerUser={
+                            this.state.signalProtocolManagerUser
+                        }
+                    />
+                )}
+            </div>
+        );
+    }
 }
-
-export default App;
